@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>William Zhang - Engineer & Builder</title>
+  <meta name="description" content="Personal portfolio of William Zhang - an engineer and builder working across robotics, electronics, software, and mechanical design." />
+
+  <!-- Fonts: Fraunces (display) · Source Serif 4 (body) · Space Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="boot" class="boot" aria-hidden="true">
+    <div class="boot__inner">
+      <div class="boot__scene" aria-hidden="true">
+        <svg class="botfig botfig--l" viewBox="0 0 44 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="5" x2="18" y2="10"/><circle cx="18" cy="3.5" r="1.6" fill="currentColor" stroke="none"/><rect x="8" y="10" width="20" height="14" rx="3"/><circle cx="18" cy="17" r="2" fill="currentColor" stroke="none"/><rect x="6" y="26" width="24" height="26" rx="3"/><line x1="12" y1="52" x2="12" y2="64"/><line x1="24" y1="52" x2="24" y2="64"/><line x1="8" y1="65" x2="15" y2="65"/><line x1="21" y1="65" x2="28" y2="65"/><line x1="30" y1="34" x2="41" y2="34"/><rect x="39" y="31" width="3.5" height="6"/></svg>
+        <span class="shot shot--r"></span>
+        <span class="shot shot--r shot--r2"></span>
+        <span class="shot shot--l"></span>
+        <span class="shot shot--l shot--l2"></span>
+        <svg class="botfig botfig--r" viewBox="0 0 44 72" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="5" x2="18" y2="10"/><circle cx="18" cy="3.5" r="1.6" fill="currentColor" stroke="none"/><rect x="8" y="10" width="20" height="14" rx="3"/><circle cx="18" cy="17" r="2" fill="currentColor" stroke="none"/><rect x="6" y="26" width="24" height="26" rx="3"/><line x1="12" y1="52" x2="12" y2="64"/><line x1="24" y1="52" x2="24" y2="64"/><line x1="8" y1="65" x2="15" y2="65"/><line x1="21" y1="65" x2="28" y2="65"/><line x1="30" y1="34" x2="41" y2="34"/><rect x="39" y="31" width="3.5" height="6"/></svg>
+      </div>
+      <p class="boot__label">Booting</p>
+      <p class="boot__pct" id="bootPct">0%</p>
+      <div class="boot__bar"><span class="boot__fill" id="bootFill"></span></div>
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">
+        <span class="nav__brand-mark">W</span>
+        <span class="nav__brand-name">William Zhang</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#work" class="nav__link">Work</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="resume.html" class="nav__link">Résumé</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm0-18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V2a1 1 0 0 1 1-1Zm11 11a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.95 6.95a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 1 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41ZM6.16 6.16a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41Zm12.02-1.41a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0ZM6.16 17.84a1 1 0 0 1 0 1.41l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0Z"/></svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--sm">Say hello</a>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ INTRO (scroll merge: name centers -> slides left, portrait fades in right) ============ -->
+    <section class="intro" id="about">
+      <div class="intro__pin">
+        <div class="container intro__grid">
+          <div class="intro__lead">
+            <h1 class="intro__name" id="heroName" aria-label="Hey, I'm William">Hey, I'm William</h1>
+            <p class="intro__philosophy" id="introPhil">
+              My passion for engineering stems from the thought of being able to build whatever I want. I'm currently working on developing the skills that will improve my proficiency
+              across all fields including mechancial, electrical, and software through classes and personal projects. My goal for this year is to become adept enough such that
+              I am confident in building anything.
+            </p>
+          </div>
+          <div class="intro__portrait" id="introPortrait">
+            <figure class="portrait">
+              <div class="portrait__img">
+                <img src="assets/portrait.jpg" alt="William Zhang overlooking an alpine lake in Switzerland" />
+              </div>
+              <figcaption class="portrait__cap">That's me - somewhere in the Swiss Alps</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT (description reveals on scroll) ============ -->
+    <section class="section about-body">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__kicker">01 - About</p>
+        </div>
+        <div class="about">
+          <div class="about__text reveal" data-reveal="left">
+            <p class="about__lead">
+              Hello again! I'm William, a junior at Harvard College studying Mechanical Engineering S.B. My cardinal directions of life is learning, chaos, and entertainment - I know quite an interesting combination
+              but I believe living life to the fullest means constantly learning new things and putting yourself in positions where you can discover new opportunities.
+            </p>
+            <p>
+              I recently had an extremely transformative summer, both in Zürich working at a robotics internship and in China teaching high school students nanotechnology and quantum computing.
+              The TLDR of my realizations falls within two main facts: one, learning is a lifelong thing and should be something that you do forever and two, there are so many intersections between
+              different subjects from how physics relates to electronics or how humanities (which is severely underrated!!) relates to robotics. I've since become way more academically inclined and
+              as introduced in the title, more academically-oriented in building skills and perspectives across all domains, not just limited to STEM. 
+            </p>
+            <p>
+              My main academic interests lie within <strong>automation</strong>. Having worked at a robotics startup and attended the 
+              World Robotics Conference 2026 held in Beijing, I've heard many experts and experienced first hand the bottlenecks in robotics & automation, especially in supply chain and manufacturing
+              It draws to me because one, of the integrated systems between all aspects of engineering, and two, because of how big of 
+              an impact it will have on societies and how humans operate. 
+            </p>
+            <p>
+              Outside of engineering, I like playing ultimate frisbee, biking, travelling, and spending time with friends. My favorite organizations on campus are <a href="https://www.hauscr.org/" target="_blank" rel="noopener">HAUSCR</a>, where I 
+              serve as the director for BPC, and <a href="https://www.aabrotherhood.com/" target="_blank" rel="noopener">AAB</a>, where I serve as the President.
+            </p>
+          </div>
+
+          <aside class="about__side reveal" data-reveal="right">
+            <!-- Collage: drop photos into assets/collage/ named 1.jpg, 2.jpg, …
+                 Each slot below points at one file. Missing files auto-hide. -->
+            <div class="collage" aria-label="A few photos of my work and life">
+              <figure class="collage__item"><img src="assets/collage/1.jpg" alt="" data-caption="AAB Brotherhood Photo at Spring Date Event 2026" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/2.jpg" alt="" data-caption="HAUSCR Group Photo at Fall Retreat 2025" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/3.jpg" alt="" data-caption="My friends and I clubbing in Shanghai!" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/4.jpg" alt="" data-caption="Photo taken while biking of night time in Boston" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/5.jpg" alt="" data-caption="Harvard Men's Ultimate Frisbee Group Photo - Lobster Pot 2024" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/6.jpg" alt="" data-caption="AAB Brotherhood Outing - Red Sox Game 2025" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/7.jpg" alt="" data-caption="Picture of My Friends and I at Friend's Castle in Frauenburg, Austria - Summer 2026" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/8.jpg" alt="" data-caption="Final Class Photo at HSYLC 2026 (Taught on Quantum Computing)" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/9.jpg" alt="" data-caption="Picture of Robots Fist-Fighting - World Robotics Conference (WRC) 2026 Held in Beijing" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+              <figure class="collage__item"><img src="assets/collage/10.jpg" alt="" data-caption="Final Goodbye Ceromony HSYLC (it was very emotional) - Held in Shanghai 2026" loading="lazy" onerror="this.closest('.collage__item').style.display='none'" /></figure>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WORK ===================== -->
+    <section class="section section--alt" id="work">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__kicker">02 - Selected work</p>
+          <h2 class="section__title"><em>Cool things that I've made</em></h2>
+          <p class="section__sub">
+            Enjoy this compilation of projects I've done in the past, with the most interesting and relevant from this summer working in Zürich!
+          </p>
+        </div>
+
+        <ol class="index" data-stagger>
+          <li class="index__item reveal">
+            <button class="index__row" type="button" aria-expanded="false" aria-controls="proj-1">
+              <span class="index__num">01</span>
+              <span class="index__body">
+                <span class="index__title">ORCA Hand × OpenArm Integration</span>
+                <span class="index__meta">Robotics · System integration</span>
+              </span>
+              <span class="index__year">2026</span>
+              <span class="index__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="index__panel" id="proj-1">
+              <div class="index__panel-inner">
+                <div class="project">
+                  <figure class="project__media">
+                    <video class="project__video" controls muted loop playsinline preload="metadata" poster="assets/projects/1-poster.jpg">
+                      <source src="assets/projects/1.mp4" type="video/mp4" />
+                      Your browser doesn't support embedded video.
+                    </video>
+                    <img class="project__still" src="assets/projects/1b.jpg" alt="OpenArm before and after the ORCA Hand integration" loading="lazy" onerror="this.style.display='none'" />
+                  </figure>
+                  <div class="project__body">
+                    <div class="project__short">
+                      <p class="project__desc"><strong>Why I built it -</strong> The ORCA hand and OpenArm were each capable on their own, but I needed them fused into one integrated arm-and-hand system to do fine, generalizable manipulation.</p>
+                      <p class="project__desc"><strong>What I built &amp; learned -</strong> I chose which OpenArm joint to remove (keeping 7 DOF, human proportions, and enough actuator power), merged the two URDFs and their inverse kinematics, and validated everything in MuJoCo before hardware. Along the way I learned how robots actually talk to each other via dora dataflows with YAML graphs, a per-machine daemon, and zero-copy Apache Arrow messages, and drove it all live with Meta Quest hand-tracking.</p>
+                    </div>
+                    <div class="project__long" hidden>
+                    <p class="project__desc"><strong>Why I built it -</strong> The ORCA hand and the OpenArm were already both open sourced platforms that one could perform teleoperation on before. However, in order to achieve fine manipulation for generalizable tasks, I needed to have a fully integrated upperbody and hand.</p>
+                    <p class="project__desc"><strong>What I built &amp; learned -</strong> The solution seemed simple at first -- simply connect the OpenArm to the Orca Hand. However, there were many important decisions and challenges such as deciding which part of the OpenArm to take off such that 7 degrees of freedom is still maintained, the arm length is matches a human, and also factors such as the weight distribution and comparison between the part taken off and the OrcaHand such that the actuators still have enough power to drive it. I have also included a before and after picture to the left.</p>
+                    <p class="project__desc">Past these decisions, I primarily worked on integrating the URDFs and merging the inverse kinematics between the OpenArm and OrcaHand (also realized how important a linux system is in robotics haha). I operated off my mac via ssh through a linux kernal on PC, tested the hand and arm seperately on Mujoco to ensure the teleoperation works, and to avoid any singularities as the consequences would be dire. I learned a lot about joint/link positioning, meshes, the characteristics of URDFs that allow the simulations to accurately represent the live demonstration of the integrated system, as well as (I think the most important) how robotcs communicate with each other. I studied dora, and learned about YAML files (the entire dataflow exists there), how important daemon is as a centralized communication coordinator (as it is the point person for each node and exists per machine), and Apache Arrow for messages that the daemon directs to relevant nodes for communication through shared memory (since dora is zero-copy).</p>
+                    <p class="project__desc">Another interesting issue was that when replacing the joint of the OpenArm with the Orca Hand, that specific joint was modelled as part of the arm inverse kinematics although it moved the OrcaHand controlled by feetech motors; this also contributed to the emphasis on testing in Mujoco.</p>
+                    <p class="project__desc">The teleoperation was done via a metaquest, where there was a open-sourced program that could track your hands' landmarks. Overall, this project taught me how to write URDFs, how robots communicate (the daemon -> dora), the virtual testing environments, and many relevant concepts like ssh, CAN, and singularities.</p>
+                  </div>
+                    <button class="project__toggle" type="button" aria-expanded="false">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="index__item reveal">
+            <button class="index__row" type="button" aria-expanded="false" aria-controls="proj-5">
+              <span class="index__num">02</span>
+              <span class="index__body">
+                <span class="index__title">Training an ACT Policy</span>
+                <span class="index__meta">Machine Learning · Imitation Learning</span>
+              </span>
+              <span class="index__year">2026</span>
+              <span class="index__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="index__panel" id="proj-5">
+              <div class="index__panel-inner">
+                <div class="project">
+                  <figure class="project__media">
+                    <video class="project__video" controls muted loop playsinline preload="metadata" poster="assets/projects/5-poster.jpg">
+                      <source src="assets/projects/5.mp4" type="video/mp4" />
+                      Your browser doesn't support embedded video.
+                    </video>
+                  </figure>
+                  <div class="project__body">
+                    <div class="project__short">
+                      <p class="project__desc"><strong>Why I trained it -</strong> My first real machine-learning project: I trained an imitation-learning (ACT) policy in a few days, both to get software experience and to confirm our new OpenArm actually worked.</p>
+                      <p class="project__desc"><strong>What I built &amp; learned -</strong> I recorded demonstrations with LeRobot and studied how Action Chunking with Transformers really works - the CVAE encoder that learns a latent "style" variable (zeroed at deployment), the decoder that predicts action chunks from images and joint states, and temporal ensembling for smooth motion. I also learned how much data quality matters: consistent lighting, a fixed camera, and enough demonstrations (my gripper only behaved once I recorded longer, deliberate opens).</p>
+                    </div>
+                    <div class="project__long" hidden>
+                    <p class="project__desc"><strong>Why I trained it -</strong> This was my first real introduction to machine learning (imitation learning). I trained it within a few days for two reasons: one, I wanted experience on the software side; and two, I wanted to make sure the OpenArm we purchased was functional.</p>
+                    <p class="project__desc"><strong>What I built &amp; learned -</strong> This has been by far an extremely fruitful software expedition. In addition to recording data and following the LeRobot open-sourced tutorials for imitation learning, I also heavily researched how action chunking with transformers actually works.</p>
+                    <p class="project__desc">I learned about the two transformer stages used in ACT. The first - the conditional variational autoencoder (CVAE) encoder - takes the joint positions and the demonstration's action sequence and outputs a mean and variance, which are sampled into a latent variable, z. That z captures the differences between demonstrations (the same task done slightly differently each time), so it's different for every recorded video. It is, however, important to stress that this encoder runs only during training: at deployment there are no future actions to encode - and you want one consistent motion rather than one variation of the motion - so z is fixed to 0, generalizing all learned deviations to one consistent motion. The second stage, the CVAE decoder, then takes the current joint positions and camera images (first run through a CNN) along with z, and emits the predicted action chunks. I also learned how important consistent lighting and a constant camera position were to the training data, since changing them (i.e. recording in the morning versus at night) would be detrimental.</p>
+                    <p class="project__desc">In the end, temporal ensembling is performed, in which ACT averages the upcoming predicted steps with exponential weight on the more recent ones, producing smooth, jitter-free motion.</p>
+                    <p class="project__desc">Specifically for my case, I initially had challenges with the OpenArm's gripper opening and closing: with only 70 demonstrations trained and very short gripper-open times, ACT treated it as a random deviation rather than a deliberate motion. I fixed it by adding more demonstrations in which I held the gripper open for at least 5 seconds.</p>
+                  </div>
+                    <button class="project__toggle" type="button" aria-expanded="false">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="index__item reveal">
+            <button class="index__row" type="button" aria-expanded="false" aria-controls="proj-4">
+              <span class="index__num">03</span>
+              <span class="index__body">
+                <span class="index__title">Retargeting & Gradient Descent</span>
+                <span class="index__meta">Control · Optimization</span>
+              </span>
+              <span class="index__year">2026</span>
+              <span class="index__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="index__panel" id="proj-4">
+              <div class="index__panel-inner">
+                <div class="project">
+                  <figure class="project__media">
+                    <video class="project__video" controls muted loop playsinline preload="metadata" poster="assets/projects/4-poster.jpg">
+                      <source src="assets/projects/4.mp4" type="video/mp4" />
+                      Your browser doesn't support embedded video.
+                    </video>
+                  </figure>
+                  <div class="project__body">
+                    <div class="project__short">
+                      <p class="project__desc"><strong>Why I modified it -</strong> On first testing the ORCA hand, the thumb (the CNC joint) couldn't reach its full range and failed the Kapandji test, so I dug into the whole retargeting pipeline to fix it.</p>
+                      <p class="project__desc"><strong>What I changed &amp; learned -</strong> I had an in-depth overview of the entire path through chasing the entire coding infrastructure: the landmark ingress, the gradient-descent retargeter that minimizes the distance between your hand's keypoints and the robot's, and the sink to the motors. I then focused on the calibration step size: if it's too large and the fingers jitter, if it's too small and it can't keep up with live motion. I also learned how much the small things matter: a scaling factor for different hand sizes, matching units (degrees vs. radians), and the differences between Feetech and Dynamixel motors.</p>
+                    </div>
+                    <div class="project__long" hidden>
+                    <p class="project__desc"><strong>Why I modified it -</strong> After I tested the OrcaHand for the first time, I found that the thumb, specifically the CNC joint did not cover the full range of motion. For reference, the initial calibration and retargeting was not able to successfully pass the kapandji test. As a result, I looked into the entire pipeline of how the OrcaHand. </p>
+                    <p class="project__desc"><strong>What I changed &amp; learned -</strong> I spent a few days digging into the entire process in which the retargeter works. Through the ingress which essentially identifies landmarks on the hand via metaquest, mac camera, etc, the retargeter (the gradient descent process to minimze the distance between the captured finger landmarks and the keypoints on the human hand), and the sink that communicates the final positions to the motor, I 
+                      got a comprehensive understanding of the entire process. The aspect I spent the most time on after this overall understanding was actually the algorithm the software used to find the max range of motion - specifically, the step size in the calibration. if it was too big, the solver would oveshoot and the fingers would jitter even if the human hand were stationary and if it were too small, it would not keep up with live motion and not calibrate the full range of motion. 
+                      
+                      </p>
+                    <p class="project__desc">Along the way, I also learned how much the little details matter such as having a scaling factor to normalize different people's hand sizes, making sure the units were the same (degrees vs. radians), and also the differences between motors such as feetech vs. dynamixel.
+
+                    </div>
+                    <button class="project__toggle" type="button" aria-expanded="false">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="index__item reveal">
+            <button class="index__row" type="button" aria-expanded="false" aria-controls="proj-2">
+              <span class="index__num">04</span>
+              <span class="index__body">
+                <span class="index__title">Hand-to-Arm Adapter</span>
+                <span class="index__meta">Mechanical · CAD</span>
+              </span>
+              <span class="index__year">2026</span>
+              <span class="index__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="index__panel" id="proj-2">
+              <div class="index__panel-inner">
+                <div class="project">
+                  <figure class="project__media">
+                    <img src="assets/projects/2.jpg" alt="Hand-to-Arm Adapter - CAD" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/projects/2b.jpg" alt="Initial adapter integration mounted on the arm" loading="lazy" onerror="this.style.display='none'" />
+                  </figure>
+                  <div class="project__body">
+                    <div class="project__short">
+                      <p class="project__desc"><strong>Why I built it -</strong> This was the central adapter that mounts the ORCA hand to the OpenArm - the top bolts to the arm, the bottom to the hand.</p>
+                      <p class="project__desc"><strong>What I changed &amp; learned -</strong> It took a lot of iteration; the final part is completely different from my first. I sized it for the hand's weight and shear stress (then shrank it so it didn't lengthen the arm too much), extruded the top so it wouldn't collide with the arm through its range of motion, made the screw holes teardrop-shaped to counter 3D-print droop, and added a chamfer to cut the stress concentration.</p>
+                    </div>
+                    <div class="project__long" hidden>
+                    <p class="project__desc"><strong>Why I built it -</strong> This piece is the central adapter piece between the OrcaHand and the OpenArm. I built it such that the top connects to the open arm and the bottom connects to the OrcaHand via threads and screw holes. The final piece is above and the initial piece was below. </p>
+                    <p class="project__desc"><strong>The process &amp; what I learned -</strong> This process required a lot of iteration - I think my biggest takeaway is how many small changes that 3D piece can have. Compared to the initial design, it's completely different.
+
+                      A few design considerations primarily included whether or not it could hold the weight of the OrcaHand and the shear stress the adapter piece would feel. My initial design was also way bigger because I initially wanted to maximize the area such that it would hold
+                      onto the piece better. However, after testing I reduced it since it made the arm length too big but still big enough to handle the stress from the weight of the OrcaHand. 
+
+      
+                    </p>
+                    <p class="project__desc">
+                      Another change was extruding the top of the adapter more since it affected the range of motion (i.e. the top adapter would collide with the open arm). The holes designed for the screws were also designed like a teardrop since when 3D printing holes, the top droops so ever-slightly because of the 
+                      printing orientation. Lastly, the final important change I made was adding a chamfer to the connection between the rectangle and the top to reduce the stress concentration.
+                    </p>
+
+                
+                  </div>
+                    <button class="project__toggle" type="button" aria-expanded="false">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="index__item reveal">
+            <button class="index__row" type="button" aria-expanded="false" aria-controls="proj-3">
+              <span class="index__num">05</span>
+              <span class="index__body">
+                <span class="index__title">Camera Mount</span>
+                <span class="index__meta">Mechanical · CAD</span>
+              </span>
+              <span class="index__year">2026</span>
+              <span class="index__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="index__panel" id="proj-3">
+              <div class="index__panel-inner">
+                <div class="project">
+                  <figure class="project__media">
+                    <img src="assets/projects/3.jpg" alt="Camera Mount - CAD" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/projects/3b.jpg" alt="Camera mount - printed / mounted" loading="lazy" onerror="this.style.display='none'" />
+                  </figure>
+                  <div class="project__body">
+                    <div class="project__short">
+                      <p class="project__desc"><strong>Why I built it -</strong> SLAM needs an egocentric view, so I designed a mount for our ESP32-P4 Pico camera board (and a Sensoryx unit that measures head-to-wrist distance by ultrasound).</p>
+                      <p class="project__desc"><strong>How I built it &amp; what I learned -</strong> The board couldn't shift at all; any movement throws off the accelerometers and tracking that SLAM depends on. Thus, I designed a form-fit 3D-printed case. It took many iterations of tight tolerances (and finding the right cutting plane to fully enclose the board), and I was proudest of the clip-fit between the two halves.</p>
+                    </div>
+                    <div class="project__long" hidden>
+                    <p class="project__desc"><strong>Why I built it -</strong> Part of the goal to create a generalizable robot that could perform tasks is to apply SLAM, and in order to achieve that, there had to be an egocentric view. Hence, I designed a camera mount for our ESP32-P4 Pico board, as well as one for a Sensoryx - used to measure the distance from the head to the wrists via ultrasound.</p>
+                    <p class="project__desc"><strong>How I built it &amp; what I learned -</strong> The main problem statement was to build a case for the ESP32 board - but with the added constraint that the board must not move within it. This is extremely important because we also have accelerometers and positional tracking on the dev board, and any minute movement could throw off their calibration, which ultimately affects the SLAM being applied.</p>
+                    <p class="project__desc">Hence, I developed a form-fit 3D-printed case (after building this, I fell in love with this design haha). It took many iterations, since the tolerances between each of the forms were so small. Finding the cutting plane of the 3D camera case was also very interesting - it was part of the initial visualization, since I had to find a way to fully enclose the ESP32 board.</p>
+                    <p class="project__desc">In the end, I was very satisfied with this design - especially the clip-fit of the top piece onto the bottom piece (pushing it in, hearing the click, and seeing it stay).</p>
+                  </div>
+                    <button class="project__toggle" type="button" aria-expanded="false">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="index__item reveal">
+            <button class="index__row" type="button" aria-expanded="false" aria-controls="proj-6">
+              <span class="index__num">06</span>
+              <span class="index__body">
+                <span class="index__title">Turf Wars Robot</span>
+                <span class="index__meta">Robotics · Mechanical design</span>
+              </span>
+              <span class="index__year">2025</span>
+              <span class="index__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <div class="index__panel" id="proj-6">
+              <div class="index__panel-inner">
+                <div class="project">
+                  <figure class="project__media">
+                    <img src="assets/projects/6.jpg" alt="Turf Wars robot - built" loading="lazy" onerror="this.style.display='none'" />
+                    <img src="assets/projects/6b.jpg" alt="Turf Wars robot - CAD" loading="lazy" onerror="this.style.display='none'" />
+                  </figure>
+                  <div class="project__body">
+                    <div class="project__short">
+                      <p class="project__desc"><strong>Why I built it -</strong> For the ES-51 Turf Wars competition, my team built a robot to place as many objects as possible onto tiered shelves in a 3-minute match. We placed 2nd of 8.</p>
+                      <p class="project__desc"><strong>What I built &amp; learned -</strong> I fabricated parts across many processes (laser-cut acrylic, 3D-printed gears, a lathe-turned mast, wax-coated CNC-milled wheel molds) and led the development of the intake, which was a Pugh-matrix-selected lever-and-scoop with a 3D-printed gear train. Debugging its clicking and misalignment taught me to calculate loads and use GD&amp;T up front instead of guessing.</p>
+                    </div>
+                    <div class="project__long" hidden>
+                    <p class="project__desc"><strong>Why I built it -</strong> For the ES-51 Turf Wars competition, my team had to design and build a robot that could precisely place the largest number of objects onto the corresponding tiered shelves within a 3-minute match. We placed 2nd out of 8 teams.</p>
+                    <p class="project__desc"><strong>What I built &amp; learned -</strong> Over the semester I learned how to produce a quality CAD model, fabricate parts, assemble mechanisms, and iterate on weekly test results. I manufactured components across a range of processes - laser-cut acrylic (baseplate and intake structure), 3D-printed gears (intake and gearbox), a lathe-turned mast and supports, and CNC-milled wheel molds that we coated in wax for extra traction - and integrated the motors and servos, working through the problems that surfaced during system integration.</p>
+                    <p class="project__desc">I focused most on the intake. In planning, we compared several concepts - a forklift, a dump-truck, and a lever/arm - with a Pugh matrix, and chose a lever-and-scoop approach for the fastest acquisition and most efficient scoring. I built it from a 3D-printed gear train and laser-cut acrylic linkages, then iterated on the gearing and belt to raise pickup force (by increasing belt tension) and cut slippage. During testing the gears kept clicking and the gearbox was misaligned with the intake, which pushed me to actually calculate the loads before adjusting gear ratios and to design the alignment properly with GD&amp;T. That one problem taught me how much the geometry and the path of force drive reliability.</p>
+                    
+                    <p class="project__desc">Next time, I would measure the game piece's mass and size the torque/force requirements before selecting a concept - it would have shaped the whole intake decision from the start. I would also run basic stress checks on the linkages before cutting; our acrylic linkage failed in bending (brittle, and too thin), which cost us time and material.</p>
+                    
+                  </div>
+                    <button class="project__toggle" type="button" aria-expanded="false">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- To add a project: copy a <li> block, bump the number, the panel id (proj-N), and the image (assets/projects/N.jpg) -->
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact">
+        <div class="reveal" data-reveal="up">
+          <p class="section__kicker">03 - Contact</p>
+          <h2 class="section__title">Let's chat!</h2>
+          <p class="contact__lead">
+            I'm always down for a conversation about anything interesting! If you ever want to talk about robotics, a project you're excited about, personal philosophies, or travels, feel free to shoot
+            me an email.
+          </p>
+        </div>
+        <div class="contact__actions reveal" data-reveal="up" data-delay="150ms">
+          <a href="mailto:williaml.zhang13@gmail.com" class="btn btn--lg">Email me</a>
+          <div class="contact__socials">
+            <a href="https://github.com/fireatwill13" class="contact__social" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/william-zhang-2a6191318/" class="contact__social" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="resume.html" class="contact__social">Résumé</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> William Zhang</span>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox for collage images -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Enlarged photo">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
