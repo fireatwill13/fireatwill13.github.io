@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>William Zhang - Résumé</title>
+
+  <!-- Cloudflare Web Analytics: records this hop as a résumé view, then we forward to the PDF -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "47d3d2581ac54453b29c00ffcd161c44"}'></script>
+  <script>
+    // Let the analytics beacon load + fire (sendBeacon survives the navigation), then open the PDF.
+    (function () {
+      var PDF = "assets/William_Zhang_Resume.pdf";
+      var go = function () { window.location.replace(PDF); };
+      // Prefer to wait for load (beacon has run by then), with a hard fallback.
+      window.addEventListener("load", function () { setTimeout(go, 250); });
+      setTimeout(go, 900);
+    })();
+  </script>
+
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: Georgia, "Source Serif 4", serif;
+      background: #faf8f4; color: #3a352f;
+      display: grid; place-items: center; text-align: center;
+    }
+    .r { opacity: .8; font-size: 1rem; }
+    .r a { color: #cc1f3a; }
+    @media (prefers-color-scheme: dark) { body { background: #1a1815; color: #d8d2c8; } .r a { color: #ef5a6e; } }
+  </style>
+</head>
+<body>
+  <p class="r">Opening résumé… <a href="assets/William_Zhang_Resume.pdf">click here if it doesn't load automatically</a>.</p>
+</body>
+</html>
